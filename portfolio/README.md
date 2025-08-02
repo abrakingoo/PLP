@@ -1,9 +1,11 @@
 # 💼 Abraham Kingoo's Portfolio
 
-A clean, responsive, and modern developer portfolio website built with **HTML** and **CSS** — no JavaScript required. This portfolio showcases my work as a **MERN stack developer**, including personal projects, open-source contributions, and GitHub stats.
+A clean, responsive, and professional portfolio website built with pure HTML and CSS — no JavaScript required. Created for the PLP July 2025 Hackathon, this portfolio highlights my journey as a MERN stack developer, featuring my skills, educational background, tech interests, personal projects, open-source contributions, and GitHub activity. It also includes a contact form and downloadable CV to connect with collaborators or potential employers
   
 ---
+🔗 **Live Site:** [https://abrahamplpportfolioproject.vercel.app](https://abrahamplpportfolioproject.vercel.app)
 
+---
 ## 🧰 Tech Stack
 
 - HTML5  

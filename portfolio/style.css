@@ -7,14 +7,14 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #121c26;
+  color: #e0e6ed;
 }
 
 /* Navbar */
 header {
-  background: white;
-  border-bottom: 1px solid #ddd;
+  background: #1a2733;
+  border-bottom: 1px solid #2b3c4a;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -30,6 +30,7 @@ header {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: #ffffff;
 }
 .nav-links {
   list-style: none;
@@ -38,19 +39,19 @@ header {
 }
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #e0e6ed;
   transition: color 0.3s;
 }
 .nav-links a:hover {
-  color: #0077ff;
+  color: #3ea6ff;
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
   padding: 4rem 1rem;
-  background: #0077ff;
-  color: white;
+  background: #0d1a26;
+  color: #ffffff;
 }
 .hero h1 {
   font-size: 2.5rem;
@@ -69,6 +70,7 @@ header {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 /* Project & Open Source Cards */
@@ -79,11 +81,11 @@ header {
 }
 
 .project-card {
-  background: white;
-  border: 1px solid #eee;
+  background: #1a2733;
+  border: 1px solid #2c3b4a;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -102,10 +104,11 @@ header {
 .project-content h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: #ffffff;
 }
 .project-content p {
   font-size: 0.95rem;
-  color: #555;
+  color: #ccd6e0;
   margin-bottom: 0.5rem;
 }
 .project-links {
@@ -114,13 +117,13 @@ header {
 .project-links a {
   margin-right: 1rem;
   text-decoration: none;
-  color: #0077ff;
+  color: #3ea6ff;
   font-weight: bold;
   font-size: 0.95rem;
   transition: color 0.3s;
 }
 .project-links a:hover {
-  color: #005acc;
+  color: #1c8ce3;
 }
 
 /* GitHub Section */
@@ -128,10 +131,12 @@ header {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 #github p {
-    width: 100%;
+  width: 100%;
 }
 
 .github-card {
@@ -146,7 +151,7 @@ header {
   height: auto;
   border-radius: 10px;
   margin-bottom: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #2b3c4a;
 }
 .github-button {
   display: inline-block;
@@ -157,14 +162,25 @@ header {
   border-radius: 6px;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  }
+}
 .github-button:hover {
   background-color: #0366d6;
 }
 
 /* Contact Section */
+#contact {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#contact h2, p {
+    width: 100%;
+    text-align: center;
+}
 #contact a {
-  color: #0077ff;
+  color: #3ea6ff;
   text-decoration: none;
 }
 #contact a:hover {
@@ -175,7 +191,7 @@ header {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background-color: #0077ff;
+  background-color: #3ea6ff;
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -183,17 +199,65 @@ header {
   transition: background-color 0.3s ease;
 }
 .resume-btn:hover {
-  background-color: #005acc;
+  background-color: #1c8ce3;
 }
 
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skills-list li {
+  background: #3ea6ff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+.contact-form label {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #3d4b5a;
+  background-color: #0e1a24;
+  color: #e0e6ed;
+  font-size: 1rem;
+}
+.contact-form button {
+  margin-top: 1rem;
+  background-color: #3ea6ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.contact-form button:hover {
+  background-color: #1c8ce3;
+}
 
 /* Footer */
 footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
-  color: #666;
-  background: #f1f1f1;
+  color: #99aabb;
+  background: #1a2733;
 }
 
 @media (max-width: 768px) {

@@ -1,40 +1,54 @@
-# 💼 Abraham Kingoo's Portfolio
+# 💼 Abraham Kingoo's Developer Portfolio
 
-A clean, responsive, and professional portfolio website built with pure HTML and CSS — no JavaScript required. Created for the PLP July 2025 Hackathon, this portfolio highlights my journey as a MERN stack developer, featuring my skills, educational background, tech interests, personal projects, open-source contributions, and GitHub activity. It also includes a contact form and downloadable CV to connect with collaborators or potential employers
-  
----
-🔗 **Live Site:** [https://abrahamplpportfolioproject.vercel.app](https://abrahamplpportfolioproject.vercel.app)
+A clean, responsive, and professional portfolio website built with pure **HTML and CSS** — no JavaScript required.  
+Created for the **PLP July 2025 Hackathon**, this project showcases my journey as a **MERN stack developer**, including:
+
+- Technical skills  
+- Educational background  
+- Passion for technology  
+- Real-world projects  
+- Open source contributions  
+- GitHub profile integration  
+- A downloadable resume and contact section  
 
 ---
+
+🔗 **Live Site:** [abrahamplpportfolioproject.vercel.app](https://abrahamplpportfolioproject.vercel.app)
+
+---
+
 ## 🧰 Tech Stack
 
-- HTML5  
-- CSS3 (Grid & Flexbox)  
-- GitHub Pages for deployment  
-- GitHub API (via stats card)
+- ✅ HTML5  
+- ✅ CSS3 (Flexbox & Grid)  
+- ✅ Git for version control  
+- ✅ Vercel for deployment  
+- ✅ GitHub Readme Stats for profile insights  
 
 ---
 
 ## ✨ Features
 
-- 🎨 Clean, responsive layout (mobile-first)
-- 🧑‍💻 Real MERN stack project previews with images
-- 🌍 Open Source contributions section
-- 📈 GitHub profile card (auto-updated)
-- 📄 Downloadable Resume button
-- 📬 Contact section with mail link
-- ⚙️ Fully static — no JavaScript required
+- 🎨 Eye-friendly dark theme with responsive design  
+- 🧠 "About Me" and Interests section  
+- 🎓 Educational background + downloadable resume  
+- 🛠️ Featured MERN stack projects with image previews  
+- 🌍 Open source contributions with links  
+- 📈 GitHub activity card (auto-updated)  
+- 📬 Contact form (Formspree-ready) & mail link  
+- 🚫 No JavaScript — built entirely with HTML & CSS  
 
 ---
 
 ## 📁 Folder Structure
 
 ```plaintext
-├── index.html
-├── style.css
-├── resume.pdf
-└── README.md
+├── index.html         # Main page
+├── style.css          # Styling
+├── resume.pdf         # Downloadable CV
+└── README.md          # This file
 ```
+
 
 ### 🛠️ How to Run This Portfolio on VS Code
 
@@ -48,17 +62,17 @@ A clean, responsive, and professional portfolio website built with pure HTML and
 
 ---
 
-#### 📁 2. Set Up Your Project Folder
-If you haven’t yet Clone This repo:
-
-    git clone  https://github.com/abrakingoo/PLP/tree/main/
+#### 📁 2. Clone and Set Up the Project(in your terminal run)
+```
+git clone https://github.com/abrakingoo/PLP.git
+```
 ---
 
 #### 💻 3. Open the Folder in VS Code
 
 1. Launch VS Code  
 2. Go to **File → Open Folder**  
-3. Select your portfolio folder  
+3. Open the PLP forlder then select the portfolio folder inside it  
 4. You’ll see your files in the Explorer panel
 
 ---
@@ -91,6 +105,21 @@ If you're **not** using Live Server:
 - Edit your HTML or CSS in VS Code
 - Save changes (`Ctrl + S` or `Cmd + S`)
 - Preview again in the browser
+
+---
+
+## 🔧 Development Process
+
+Although this is a solo project, here's an overview of how I approached the development:
+
+- ✅ **HTML & CSS**: lightweight, fast-loading, and fully static portfolio without relying on JavaScript or frameworks — perfect for learning and accessibility.
+- ✅ **Responsive Design**: built mobile-first using CSS Grid and Flexbox to ensure the layout works across all screen sizes.
+- ✅ **Version Control**: Git was used consistently to track changes and manage the project in a structured way. Commit history reflects the step-by-step build process.
+- ✅ **Tools Used**:
+  - Visual Studio Code (VS Code)
+  - Formspree (for handling contact form submissions)
+  - Vercel (for deploying the live site)
+  - Live Server extension (for local preview during development)
 
 
 ### 📬 Contact

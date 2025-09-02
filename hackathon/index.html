@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Jua Katiba - AI Constitutional Education Platform</title>
+    
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+ 
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="logo" onclick="showHome()">Jua Katiba</div>
+            <div class="nav-menu">
+                <a class="nav-link" onclick="scrollToSection('about')">About</a>
+                <a class="nav-link" onclick="scrollToSection('features')">Features</a>
+                <a class="nav-link" onclick="showDashboard()">Dashboard</a>
+                <a class="nav-link" onclick="showChat()">AI Chat</a>
+                <button class="btn-nav" onclick="showChat()">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="grid-bg"></div>
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            
+            <div class="hero-content">
+                <div class="hero-badge">🇰🇪 AI-Powered Constitutional Education</div>
+                <h1 class="hero-title">Know Your Rights.<br>Shape Your Future.</h1>
+                <p class="hero-subtitle">Master the Kenyan Constitution through intelligent conversations and personalized learning</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showChat()">Start Learning Now</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('about')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="scroll-text">Scroll to explore</div>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-container">
+                <div class="about-content">
+                    <div class="section-label">About Jua Katiba</div>
+                    <h2 class="section-title">Democratizing Constitutional Knowledge</h2>
+                    <p class="section-text">
+                        We're transforming how Kenyans learn about their constitutional rights. 
+                        Through AI-powered conversations, personalized learning paths, and 
+                        real-world examples, we make legal knowledge accessible to everyone.
+                    </p>
+                    <p class="section-text">
+                        Whether you're a student, business owner, or citizen seeking to understand 
+                        your rights, Jua Katiba provides instant, accurate, and contextual 
+                        constitutional guidance in plain language.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Active Users</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Articles Covered</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">47</div>
+                            <div class="stat-label">Counties Reached</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="floating-cards">
+                        <div class="float-card card-1">
+                            <div class="card-icon">⚖️</div>
+                            <div class="card-title">Legal Rights</div>
+                            <div class="card-description">Understand your fundamental rights and freedoms</div>
+                        </div>
+                        <div class="float-card card-2">
+                            <div class="card-icon">🎓</div>
+                            <div class="card-title">Education</div>
+                            <div class="card-description">Learn through interactive AI conversations</div>
+                        </div>
+                        <div class="float-card card-3">
+                            <div class="card-icon">🌍</div>
+                            <div class="card-title">Accessibility</div>
+                            <div class="card-description">Available in English, Kiswahili, and Sheng</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="features-container">
+                <div class="features-header">
+                    <div class="section-label">Features</div>
+                    <h2 class="section-title">Everything You Need to Master Your Rights</h2>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card" onclick="showChat()">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">AI-Powered Q&A</h3>
+                        <p class="feature-description">
+                            Get instant, accurate answers about your constitutional rights. 
+                            Our AI understands context and provides relevant legal information 
+                            with real-world examples.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card" onclick="showDashboard()">
+                        <div class="feature-icon">📚</div>
+                        <h3 class="feature-title">Personalized Learning</h3>
+                        <p class="feature-description">
+                            Create custom projects for specific topics. Track your progress, 
+                            save conversations, and build your constitutional knowledge systematically.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card" onclick="showDashboard()">
+                        <div class="feature-icon">🏆</div>
+                        <h3 class="feature-title">Gamified Experience</h3>
+                        <p class="feature-description">
+                            Earn points, unlock achievements, and compete on leaderboards. 
+                            Learning becomes engaging with our reward system.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card" onclick="showChat()">
+                        <div class="feature-icon">💬</div>
+                        <h3 class="feature-title">Multiple Languages</h3>
+                        <p class="feature-description">
+                            Access constitutional knowledge in English, Kiswahili, or Sheng. 
+                            Breaking language barriers to legal education.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card" onclick="showDashboard()">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Progress Tracking</h3>
+                        <p class="feature-description">
+                            Monitor your learning journey with detailed analytics. 
+                            See your strengths and areas for improvement.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card" onclick="showAuth()">
+                        <div class="feature-icon">💳</div>
+                        <h3 class="feature-title">Affordable Access</h3>
+                        <p class="feature-description">
+                            Start free with 5 questions. Upgrade with flexible plans 
+                            via M-Pesa starting from just KES 50.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Chat Section (Hidden by default) -->
+  
+<div id="chat-section" class="app-section">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1 class="chat-title">AI Constitutional Assistant</h1>
+            <p class="chat-subtitle">Ask any question about your rights under the Kenyan Constitution</p>
+        </div>
+
+        <!-- Improved Quick Questions - Now Sticky and Mobile Friendly -->
+        <div class="quick-questions-wrapper">
+            <div class="quick-questions-toggle" onclick="toggleQuestions()">
+                <span>💡 Quick Questions</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="quick-questions" id="quickQuestions">
+                <button class="question-pill" onclick="askAI('What are my rights if arrested?')">
+                    🚔 Arrest rights
+                </button>
+                <button class="question-pill" onclick="askAI('How do I register to vote?')">
+                    🗳️ Voter registration
+                </button>
+                <button class="question-pill" onclick="askAI('Can police search my phone?')">
+                    📱 Phone privacy
+                </button>
+                <button class="question-pill" onclick="askAI('What are women property rights?')">
+                    🏠 Property rights
+                </button>
+                <button class="question-pill" onclick="askAI('How to start a business legally?')">
+                    💼 Business
+                </button>
+                <button class="question-pill" onclick="askAI('What are my education rights?')">
+                    🎓 Education
+                </button>
+                <button class="question-pill" onclick="askAI('Can I protest peacefully?')">
+                    ✊ Protest
+                </button>
+                <button class="question-pill" onclick="askAI('What are worker rights?')">
+                    👷 Labor rights
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will appear here -->
+        </div>
+
+        <div class="chat-input-container">
+            <input 
+                type="text" 
+                class="chat-input" 
+                id="chatInput" 
+                placeholder="Ask about your constitutional rights..."
+                onkeypress="handleEnter(event)"
+            >
+            <button class="chat-send" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard-section" class="app-section">
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <h1 class="welcome-title">Your Learning Dashboard</h1>
+                <p style="color: var(--text-muted);">Track your constitutional education journey</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dash-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📚</div>
+                    <div style="font-size: 2rem; font-weight: bold;">12</div>
+                    <div style="color: var(--text-muted);">Questions Asked</div>
+                </div>
+                <div class="dash-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏆</div>
+                    <div style="font-size: 2rem; font-weight: bold;">5</div>
+                    <div style="color: var(--text-muted);">Achievements</div>
+                </div>
+                <div class="dash-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔥</div>
+                    <div style="font-size: 2rem; font-weight: bold;">7</div>
+                    <div style="color: var(--text-muted);">Day Streak</div>
+                </div>
+                <div class="dash-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚡</div>
+                    <div style="font-size: 2rem; font-weight: bold;">450</div>
+                    <div style="color: var(--text-muted);">XP Points</div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="showChat()">Continue Learning</button>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('authModal')">×</button>
+            <h2 style="margin-bottom: 2rem;">Get Started</h2>
+            
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" id="authEmail" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-input" id="authPassword" placeholder="••••••••">
+            </div>
+            
+            <button class="btn btn-primary" onclick="handleAuth()" style="width: 100%;">
+                Sign In / Sign Up
+            </button>
+            
+            <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem;">
+                By continuing, you agree to our Terms of Service
+            </p>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('paymentModal')">×</button>
+            <h2 style="margin-bottom: 1.5rem;">Upgrade Your Access</h2>
+            
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                You've used your 5 free questions. Choose a plan to continue learning:
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+                <div class="dash-card" style="cursor: pointer; position: relative;" onclick="selectPlan('daily')">
+                    <h3 style="margin-bottom: 0.5rem;">Daily Pass</h3>
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--accent-light);">KES 50</div>
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">24 hours unlimited access</p>
+                </div>
+                
+                <div class="dash-card" style="cursor: pointer; position: relative;" onclick="selectPlan('weekly')">
+                    <h3 style="margin-bottom: 0.5rem;">Weekly Pass</h3>
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--accent-light);">KES 200</div>
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">7 days unlimited access</p>
+                </div>
+                
+                <div class="dash-card" style="cursor: pointer; position: relative; border: 2px solid var(--accent);" onclick="selectPlan('monthly')">
+                    <div style="position: absolute; top: -12px; right: 20px; background: var(--accent); padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.75rem;">
+                        BEST VALUE
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Monthly Pass</h3>
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--accent-light);">KES 500</div>
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">30 days unlimited + Premium features</p>
+                </div>
+            </div>
+            
+            <div style="padding: 1rem; background: rgba(99, 102, 241, 0.1); border-radius: 10px; margin-bottom: 1rem;">
+                <p style="font-size: 0.875rem; color: var(--accent-light); text-align: center;">
+                    💳 Secure payment via IntaSend (M-Pesa, Visa, Mastercard)
+                </p>
+            </div>
+            
+            <button class="btn btn-primary" id="payButton" onclick="processPayment()" style="width: 100%;">
+                Pay with Flutterwave
+            </button>
+        </div>
+    </div>
+
+   
+</body>
+<script src="./main.js"></script>
+</html>

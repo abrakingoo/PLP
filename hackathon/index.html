@@ -20,12 +20,13 @@
     <nav class="nav" id="nav">
         <div class="nav-container">
             <div class="logo" onclick="showHome()">Jua Katiba</div>
-            <div class="nav-menu">
-                <a class="nav-link" onclick="scrollToSection('about')">About</a>
-                <a class="nav-link" onclick="scrollToSection('features')">Features</a>
-                <a class="nav-link" onclick="showDashboard()">Dashboard</a>
-                <a class="nav-link" onclick="showChat()">AI Chat</a>
-                <button class="btn-nav" onclick="showChat()">Get Started</button>
+            <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+            <div class="nav-menu" id="navMenu">
+                <a class="nav-link" onclick="scrollToSection('about'); closeMobileMenu()">About</a>
+                <a class="nav-link" onclick="scrollToSection('features'); closeMobileMenu()">Features</a>
+                <a class="nav-link" onclick="showDashboard(); closeMobileMenu()">Dashboard</a>
+                <a class="nav-link" onclick="showChat(); closeMobileMenu()">AI Chat</a>
+                <button class="btn-nav" onclick="showChat(); closeMobileMenu()">Get Started</button>
             </div>
         </div>
     </nav>
@@ -164,12 +165,12 @@
                         </p>
                     </div>
                     
-                    <div class="feature-card" onclick="showAuth()">
-                        <div class="feature-icon">💳</div>
-                        <h3 class="feature-title">Affordable Access</h3>
+                    <div class="feature-card" onclick="showChat()">
+                        <div class="feature-icon">♾️</div>
+                        <h3 class="feature-title">Unlimited Access</h3>
                         <p class="feature-description">
-                            Start free with 5 questions. Upgrade with flexible plans 
-                            via M-Pesa starting from just KES 50.
+                            Learn without limits! Ask unlimited questions about your constitutional rights
+                            completely free of charge.
                         </p>
                     </div>
                 </div>
@@ -186,53 +187,46 @@
             <p class="chat-subtitle">Ask any question about your rights under the Kenyan Constitution</p>
         </div>
 
-        <!-- Improved Quick Questions - Now Sticky and Mobile Friendly -->
-        <div class="quick-questions-wrapper">
-            <div class="quick-questions-toggle" onclick="toggleQuestions()">
-                <span>💡 Quick Questions</span>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="quick-questions" id="quickQuestions">
-                <button class="question-pill" onclick="askAI('What are my rights if arrested?')">
-                    🚔 Arrest rights
-                </button>
-                <button class="question-pill" onclick="askAI('How do I register to vote?')">
-                    🗳️ Voter registration
-                </button>
-                <button class="question-pill" onclick="askAI('Can police search my phone?')">
-                    📱 Phone privacy
-                </button>
-                <button class="question-pill" onclick="askAI('What are women property rights?')">
-                    🏠 Property rights
-                </button>
-                <button class="question-pill" onclick="askAI('How to start a business legally?')">
-                    💼 Business
-                </button>
-                <button class="question-pill" onclick="askAI('What are my education rights?')">
-                    🎓 Education
-                </button>
-                <button class="question-pill" onclick="askAI('Can I protest peacefully?')">
-                    ✊ Protest
-                </button>
-                <button class="question-pill" onclick="askAI('What are worker rights?')">
-                    👷 Labor rights
-                </button>
-            </div>
-        </div>
-
         <div class="chat-messages" id="chatMessages">
             <!-- Messages will appear here -->
         </div>
 
-        <div class="chat-input-container">
-            <input 
-                type="text" 
-                class="chat-input" 
-                id="chatInput" 
-                placeholder="Ask about your constitutional rights..."
-                onkeypress="handleEnter(event)"
-            >
-            <button class="chat-send" onclick="sendMessage()">Send</button>
+        <!-- Fixed Bottom Section with Suggestions and Input -->
+        <div class="chat-bottom-section">
+            <!-- Quick Questions with Navigation -->
+            <div class="quick-questions-container">
+                <button class="nav-arrow nav-arrow-left" onclick="scrollSuggestions('left')" id="navLeft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+
+                <div class="quick-questions" id="quickQuestions" onscroll="checkScrollButtons()">
+                    <!-- Questions will be loaded dynamically -->
+                </div>
+
+                <button class="nav-arrow nav-arrow-right" onclick="scrollSuggestions('right')" id="navRight">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Chat Input with Icon Button -->
+            <div class="chat-input-container">
+                <input
+                    type="text"
+                    class="chat-input"
+                    id="chatInput"
+                    placeholder="Ask about your constitutional rights..."
+                    onkeypress="handleEnter(event)"
+                >
+                <button class="chat-send-icon" onclick="sendMessage()" aria-label="Send message">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -272,79 +266,8 @@
         </div>
     </div>
 
-    <!-- Auth Modal -->
-    <div class="modal" id="authModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('authModal')">×</button>
-            <h2 style="margin-bottom: 2rem;">Get Started</h2>
-            
-            <div class="form-group">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-input" id="authEmail" placeholder="your@email.com">
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-input" id="authPassword" placeholder="••••••••">
-            </div>
-            
-            <button class="btn btn-primary" onclick="handleAuth()" style="width: 100%;">
-                Sign In / Sign Up
-            </button>
-            
-            <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem;">
-                By continuing, you agree to our Terms of Service
-            </p>
-        </div>
-    </div>
-
     <!-- Toast Container -->
     <div class="toast-container" id="toastContainer"></div>
-
-    <!-- Payment Modal -->
-    <div class="modal" id="paymentModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('paymentModal')">×</button>
-            <h2 style="margin-bottom: 1.5rem;">Upgrade Your Access</h2>
-            
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">
-                You've used your 5 free questions. Choose a plan to continue learning:
-            </p>
-            
-            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
-                <div class="dash-card" style="cursor: pointer; position: relative;" onclick="selectPlan('daily')">
-                    <h3 style="margin-bottom: 0.5rem;">Daily Pass</h3>
-                    <div style="font-size: 2rem; font-weight: bold; color: var(--accent-light);">KES 50</div>
-                    <p style="color: var(--text-muted); font-size: 0.875rem;">24 hours unlimited access</p>
-                </div>
-                
-                <div class="dash-card" style="cursor: pointer; position: relative;" onclick="selectPlan('weekly')">
-                    <h3 style="margin-bottom: 0.5rem;">Weekly Pass</h3>
-                    <div style="font-size: 2rem; font-weight: bold; color: var(--accent-light);">KES 200</div>
-                    <p style="color: var(--text-muted); font-size: 0.875rem;">7 days unlimited access</p>
-                </div>
-                
-                <div class="dash-card" style="cursor: pointer; position: relative; border: 2px solid var(--accent);" onclick="selectPlan('monthly')">
-                    <div style="position: absolute; top: -12px; right: 20px; background: var(--accent); padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.75rem;">
-                        BEST VALUE
-                    </div>
-                    <h3 style="margin-bottom: 0.5rem;">Monthly Pass</h3>
-                    <div style="font-size: 2rem; font-weight: bold; color: var(--accent-light);">KES 500</div>
-                    <p style="color: var(--text-muted); font-size: 0.875rem;">30 days unlimited + Premium features</p>
-                </div>
-            </div>
-            
-            <div style="padding: 1rem; background: rgba(99, 102, 241, 0.1); border-radius: 10px; margin-bottom: 1rem;">
-                <p style="font-size: 0.875rem; color: var(--accent-light); text-align: center;">
-                    💳 Secure payment via IntaSend (M-Pesa, Visa, Mastercard)
-                </p>
-            </div>
-            
-            <button class="btn btn-primary" id="payButton" onclick="processPayment()" style="width: 100%;">
-                Pay with Flutterwave
-            </button>
-        </div>
-    </div>
 
    
 </body>
